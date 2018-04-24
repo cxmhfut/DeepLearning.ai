@@ -1,0 +1,30 @@
+# Basics of Neural Network Programming
+
+## Binary Classification
+
+Example: Cat vs Non-Cat
+The goal is to train a classifier that the input is an image represented by a feature vector, x and predicts
+whether the corresponding label y is 1 or 0. In this case, whether this is a cat image (1) or a non-cat image
+(0).
+
+![binary_classify_cat_01](https://github.com/cxmhfut/DeepLearning.ai/blob/master/images/binary_classify_cat_01.png)
+
+二分类问题：输入一张猫的图片（64\*64\*3），输出一个标签y（0/1）用来表示图片中是否有猫。
+
+![binary_classify_cat_02](https://github.com/cxmhfut/DeepLearning.ai/blob/master/images/binary_classify_cat_02.png)
+
+An image is store in the computer in three separate matrices corresponding to the Red, Green, and Blue
+color channels of the image. The three matrices have the same size as the image, for example, the
+resolution of the cat image is 64 pixels X 64 pixels, the three matrices (RGB) are 64 X 64 each.
+The value in a cell represents the pixel intensity which will be used to create a feature vector of ndimension. In pattern recognition and machine learning, a feature vector represents an object, in this
+case, a cat or no cat.
+To create a feature vector, X the pixel intensity values will be “unroll” or “reshape” for each color. The
+dimension of the input feature vector X is n<sub>x</sub> = 64\*64\*3 = 12 288.
+
+用X来表示输入的一张图片，X的大小是64\*64\*3=12 288，表示这张图片的像素值（尺寸64\*64，RGB的3个颜色通道）
+
+m个训练样本：{(x<sup>(1)</sup>,y<sup>(1)</sup>),(x<sup>(2)</sup>,y<sup>(2)</sup>),...,(x<sup>(m)</sup>,y<sup>(m)</sup>)}
+
+
+
+

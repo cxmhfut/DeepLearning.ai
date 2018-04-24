@@ -1,6 +1,6 @@
 # Introduction to Deep Learning
 
-## Welcome
+## 1 Welcome
 
 AI is the new Electricity
 
@@ -12,7 +12,7 @@ communications, and more
 AI will now bring about an equally
 big transformation.
 
-## What you’ll learn
+### What you’ll learn
 
 Courses in this sequence (Specialization):
 
@@ -27,4 +27,7 @@ tuning, Regularization and Optimization
 
 5.Natural Language Processing: Building sequence models
 
-![image01](https://github.com/cxmhfut/DeepLearning.ai/blob/master/images/house_price_prediction.png)
+## What is a Neural Network?
+
+### Housing Price Prediction
+

@@ -31,3 +31,8 @@ tuning, Regularization and Optimization
 
 ### Housing Price Prediction
 
+![house_price_prediction_01](https://github.com/cxmhfut/DeepLearning.ai/blob/master/images/house_price_prediction_01.png)
+
+![house_price_prediction_02](https://github.com/cxmhfut/DeepLearning.ai/blob/master/images/house_price_prediction_02.png)
+
+![house_price_prediction_03](https://github.com/cxmhfut/DeepLearning.ai/blob/master/images/house_price_prediction_03.png)

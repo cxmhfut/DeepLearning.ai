@@ -1,6 +1,6 @@
 # Basics of Neural Network Programming
 
-## Binary Classification
+## 1 Binary Classification
 
 Example: Cat vs Non-Cat
 The goal is to train a classifier that the input is an image represented by a feature vector, x and predicts
@@ -25,6 +25,16 @@ dimension of the input feature vector X is n<sub>x</sub> = 64\*64\*3 = 12 288.
 
 m个训练样本：{(x<sup>(1)</sup>,y<sup>(1)</sup>),(x<sup>(2)</sup>,y<sup>(2)</sup>),...,(x<sup>(m)</sup>,y<sup>(m)</sup>)}
 
+## 2 Logistic Regression
 
+![logistic_01](https://github.com/cxmhfut/DeepLearning.ai/blob/master/images/logistic_01.png)
 
+![logistic_02](https://github.com/cxmhfut/DeepLearning.ai/blob/master/images/logistic_02.png)
 
+我们构造一个线性函数：ŷ = W<sup>T</sup>X + b
+
+其中ŷ = P(y=1|X) ŷ表示输入为X的情况下，这张图片的标签y=1的概率。
+
+而概率值是一个0~1之间的数，我们构造的函数不能保证ŷ∈[0,1]
+
+我们利用一个sigmoid函数将我们的输出值映射到[0,1]上

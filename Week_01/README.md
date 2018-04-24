@@ -26,3 +26,5 @@ tuning, Regularization and Optimization
 4.Convolutional Neural Networks
 
 5.Natural Language Processing: Building sequence models
+
+![image01](https://github.com/cxmhfut/DeepLearning.ai/blob/master/images/house_price_prediction.png)

@@ -43,4 +43,23 @@ m个训练样本：{(x<sup>(1)</sup>,y<sup>(1)</sup>),(x<sup>(2)</sup>,y<sup>(2)
 
 ![logistic_regression_cost_function](https://github.com/cxmhfut/DeepLearning.ai/blob/master/images/logistic_regression_cost_function.png)
 
-## 4 
+## 4 Gradient Descent
+
+![gradient_descent_01](https://github.com/cxmhfut/DeepLearning.ai/blob/master/images/gradient_descent_01.png)
+
+![gradient_descent_02](https://github.com/cxmhfut/DeepLearning.ai/blob/master/images/gradient_descent_02.png)
+
+## 5 Derivatives & 6 More derivative examples
+
+![derivatives_01](https://github.com/cxmhfut/DeepLearning.ai/blob/master/images/derivatives_01.png)
+
+![derivatives_02](https://github.com/cxmhfut/DeepLearning.ai/blob/master/images/derivatives_02.png)
+
+![derivatives_03](https://github.com/cxmhfut/DeepLearning.ai/blob/master/images/derivatives_03.png)
+
+## 7 Computation Graph & 8 Derivatives with a Computation Graph
+
+![computation_graph_01](https://github.com/cxmhfut/DeepLearning.ai/blob/master/images/computation_graph_01.png)
+
+![computation_graph_02](https://github.com/cxmhfut/DeepLearning.ai/blob/master/images/computation_graph_02.png)
+

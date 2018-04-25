@@ -51,7 +51,7 @@ m个训练样本：{(x<sup>(1)</sup>,y<sup>(1)</sup>),(x<sup>(2)</sup>,y<sup>(2)
 
 ## 5 Derivatives & 6 More derivative examples
 
-![derivatives_01](https://github.com/cxmhfut/DeepLearning.ai/blob/master/images/derivatives_01.png)
+![derivatives_01](https://github.com/cxmhfut/DeepLearning.ai/blob/master/images/derivatives_01.jpg)
 
 ![derivatives_02](https://github.com/cxmhfut/DeepLearning.ai/blob/master/images/derivatives_02.png)
 
@@ -59,7 +59,7 @@ m个训练样本：{(x<sup>(1)</sup>,y<sup>(1)</sup>),(x<sup>(2)</sup>,y<sup>(2)
 
 ## 7 Computation Graph & 8 Derivatives with a Computation Graph
 
-![computation_graph_01](https://github.com/cxmhfut/DeepLearning.ai/blob/master/images/computation_graph_01.png)
+![computation_graph_01](https://github.com/cxmhfut/DeepLearning.ai/blob/master/images/computation_graph_01.jpg)
 
-![computation_graph_02](https://github.com/cxmhfut/DeepLearning.ai/blob/master/images/computation_graph_02.png)
+![computation_graph_02](https://github.com/cxmhfut/DeepLearning.ai/blob/master/images/computation_graph_02.jpg)
 

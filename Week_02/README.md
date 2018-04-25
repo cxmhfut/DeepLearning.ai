@@ -38,3 +38,9 @@ m个训练样本：{(x<sup>(1)</sup>,y<sup>(1)</sup>),(x<sup>(2)</sup>,y<sup>(2)
 而概率值是一个0~1之间的数，我们构造的函数不能保证ŷ∈[0,1]
 
 我们利用一个sigmoid函数将我们的输出值映射到[0,1]上
+
+## 3 Logistic Regression Cost Function
+
+![logistic_regression_cost_function](https://github.com/cxmhfut/DeepLearning.ai/blob/master/images/logistic_regression_cost_function.png)
+
+## 4 

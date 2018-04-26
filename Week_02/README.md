@@ -183,4 +183,93 @@ For loop:2436.615228652954ms
 Vectorized version:14.008522033691406ms
 ```
 
-caoxinyue
+## 13 Vectorizing Logistic Regression
+
+![vectorizing_logistic_regression](https://github.com/cxmhfut/DeepLearning.ai/blob/master/images/vectorizing_logistic_regression.png)
+
+## 14 Vectorizing Logistic Regression's Gradient Computation
+
+![gradient_computation](https://github.com/cxmhfut/DeepLearning.ai/blob/master/images/gradient_computation.png.png)
+
+## 15 Broadcasting in Python
+
+计算矩阵A每个元素的值所占当前列的百分比
+
+```python
+import numpy as np
+
+A = np.array([[56.0,0.0,4.4,68.0],
+              [1.2,104.0,52.0,8.0],
+              [1.8,135.0,99.0,0.9]])
+
+print(A)
+
+cal = A.sum(axis=0)#axis:0 vertical 1 horizontal
+
+print(cal)
+
+percentage = 100 * A / cal.reshape(1,4)
+
+print(percentage)
+```
+
+A:矩阵A
+
+```
+[[  56.     0.     4.4   68. ]
+ [   1.2  104.    52.     8. ]
+ [   1.8  135.    99.     0.9]]
+```
+
+cal:矩阵A各列之和
+
+```
+[  59.   239.   155.4   76.9]
+```
+
+percentage:百分比
+
+```
+[[ 94.91525424   0.           2.83140283  88.42652796]
+ [  2.03389831  43.51464435  33.46203346  10.40312094]
+ [  3.05084746  56.48535565  63.70656371   1.17035111]]
+```
+
+(m,n)的矩阵与一个(1,n)的矩阵相加时,(1,n)会竖直复制成(m,n)的矩阵,然后进行相关操作
+(m,n)的矩阵与一个(m,1)的矩阵相加时,(m,1)会横向复制成(m,n)的矩阵,然后进行相关操作
+
+```python
+import numpy as np
+
+A = np.array([[1,2,3],
+              [4,5,6]])
+
+B = np.array([[100,200,300]])
+
+C = np.array([[100],
+              [200]])
+
+print(A+B)
+print(A+C)
+```
+
+```
+[[101 202 303]
+ [104 205 306]]
+[[101 102 103]
+ [204 205 206]]
+```
+
+## 16 A note on python/numpy vectors
+
+![python_numpy_vector](https://github.com/cxmhfut/DeepLearning.ai/blob/master/images/python_numpy_vector.png.png)
+
+## 17 Quick tour of Jupyter/ipython notebooks
+
+Jupyter
+
+## 18 Explanation of logistic regression cost function
+
+![logistic_regression_cost_function_01](https://github.com/cxmhfut/DeepLearning.ai/blob/master/images/logistic_regression_cost_function_01.png.png)
+
+![logistic_regression_cost_function_02](https://github.com/cxmhfut/DeepLearning.ai/blob/master/images/logistic_regression_cost_function_02.png.png)

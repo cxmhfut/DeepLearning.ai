@@ -73,7 +73,12 @@ m个训练样本：{(x<sup>(1)</sup>,y<sup>(1)</sup>),(x<sup>(2)</sup>,y<sup>(2)
 
 向量化消除显示循环提高运算速度
 
+1维矩阵乘法
+
 ```python
+import numpy as np
+import time
+
 a = np.random.rand(1000000)
 b = np.random.rand(1000000)
 
@@ -98,4 +103,82 @@ print("For loop:"+str(1000*(toc-tic))+"ms")
 Vectorized version:8.011817932128906ms
 250232.209003
 For loop:717.4687385559082ms
+```
+
+多维矩阵乘法 u=A*v
+
+```python
+import numpy as np
+import time
+
+#u = A*v
+
+row1 = 1
+col1 = 1000000
+row2 = 1000000
+col2 = 2
+
+A = np.random.rand(row1,col1)
+v = np.random.rand(row2,col2)
+u = np.zeros([row1,col2])
+
+tic = time.time()
+for i in range(row1):
+    for j in range(col2):
+        u[i][j] = 0
+        for k in range(col1):
+            u[i][j]+=A[i][k]*v[k][j]
+toc = time.time()
+
+print(u)
+print("For loop:"+str(1000*(toc-tic))+"ms")
+
+tic = time.time()
+u = np.dot(A,v)
+toc = time.time()
+
+print(u)
+print("Vectorized version:"+str(1000*(toc-tic))+"ms")
+```
+
+```
+[[ 250247.23488535  249917.57002751]]
+For loop:2892.9190635681152ms
+[[ 250247.23488534  249917.57002752]]
+Vectorized version:51.033735275268555ms
+```
+
+u = exp(v)
+```python
+import numpy as np
+import time
+
+size = 1000000
+
+v = np.random.rand(size)
+u = np.zeros(size)
+
+tic = time.time()
+for i in range(size):
+    u[i] = np.exp(v[i])
+toc = time.time()
+
+print(u)
+print("For loop:"+str(1000*(toc-tic))+"ms")
+
+tic = time.time()
+u = np.exp(v)
+toc = time.time()
+
+print(u)
+print("Vectorized version:"+str(1000*(toc-tic))+"ms")
+```
+
+```
+[ 2.11975742  1.52438811  1.27205874 ...,  1.82248043  1.87373109
+  1.42462108]
+For loop:2436.615228652954ms
+[ 2.11975742  1.52438811  1.27205874 ...,  1.82248043  1.87373109
+  1.42462108]
+Vectorized version:14.008522033691406ms
 ```

@@ -63,3 +63,9 @@ m个训练样本：{(x<sup>(1)</sup>,y<sup>(1)</sup>),(x<sup>(2)</sup>,y<sup>(2)
 
 ![computation_graph_02](https://github.com/cxmhfut/DeepLearning.ai/blob/master/images/computation_graph_02.jpg)
 
+## 9 Logistic Regression Gradient descent & 10 Gradient descent on m examples
+
+![logistic_regression_derivatives](https://github.com/cxmhfut/DeepLearning.ai/blob/master/images/logistic_regression_derivatives.png)
+
+![logistic_regression_on_m_samples](https://github.com/cxmhfut/DeepLearning.ai/blob/master/images/logistic_regression_on_m_samples.png)
+

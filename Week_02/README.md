@@ -262,7 +262,7 @@ print(A+C)
 
 ## 16 A note on python/numpy vectors
 
-![python_numpy_vector](https://github.com/cxmhfut/DeepLearning.ai/blob/master/images/python_numpy_vector.png.png)
+![python_numpy_vector](https://github.com/cxmhfut/DeepLearning.ai/blob/master/images/python_numpy_vector.png)
 
 ## 17 Quick tour of Jupyter/ipython notebooks
 
@@ -270,6 +270,6 @@ Jupyter
 
 ## 18 Explanation of logistic regression cost function
 
-![logistic_regression_cost_function_01](https://github.com/cxmhfut/DeepLearning.ai/blob/master/images/logistic_regression_cost_function_01.png.png)
+![logistic_regression_cost_function_01](https://github.com/cxmhfut/DeepLearning.ai/blob/master/images/logistic_regression_cost_function_01.png)
 
-![logistic_regression_cost_function_02](https://github.com/cxmhfut/DeepLearning.ai/blob/master/images/logistic_regression_cost_function_02.png.png)
+![logistic_regression_cost_function_02](https://github.com/cxmhfut/DeepLearning.ai/blob/master/images/logistic_regression_cost_function_02.png)

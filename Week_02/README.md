@@ -69,3 +69,33 @@ m个训练样本：{(x<sup>(1)</sup>,y<sup>(1)</sup>),(x<sup>(2)</sup>,y<sup>(2)
 
 ![logistic_regression_on_m_samples](https://github.com/cxmhfut/DeepLearning.ai/blob/master/images/logistic_regression_on_m_samples.png)
 
+## 11 Vectorization & 12 More vectorization examples
+
+向量化消除显示循环提高运算速度
+
+```python
+a = np.random.rand(1000000)
+b = np.random.rand(1000000)
+
+tic = time.time()
+c = np.dot(a,b)
+toc = time.time()
+
+print(c)
+print("Vectorized version:"+str(1000*(toc-tic))+"ms")
+
+c = 0
+tic = time.time()
+for i in range(1000000):
+    c+=a[i]*b[i]
+toc = time.time()
+
+print(c)
+print("For loop:"+str(1000*(toc-tic))+"ms")
+```
+```
+250232.209003
+Vectorized version:8.011817932128906ms
+250232.209003
+For loop:717.4687385559082ms
+```

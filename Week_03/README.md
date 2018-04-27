@@ -34,7 +34,7 @@
 
 ![tanh](https://github.com/cxmhfut/DeepLearning.ai/blob/master/images/tanh.png)
 
-<h3>relu and leaky relu<h3>
+<h3>relu and leaky relu</h3>
 
 ![relu](https://github.com/cxmhfut/DeepLearning.ai/blob/master/images/relu.png)
 

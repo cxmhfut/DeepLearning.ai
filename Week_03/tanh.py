@@ -1,13 +1,11 @@
-#encoding:utf-8
-
 import numpy as np
 import matplotlib.pyplot as plt
 
-def sigmoid(x):
-    return 1.0/(1.0 + np.exp(-x))
+def tanh(x):
+    return (np.exp(x)-np.exp(-x))/(np.exp(x)+np.exp(-x))
 
 x = np.linspace(-10,10)
-y = sigmoid(x)
+y = tanh(x)
 
 fig = plt.figure(figsize=(6,4))
 ax = fig.add_subplot(111)
@@ -29,6 +27,6 @@ ax.yaxis.set_ticks_position('left')
 ax.spines['left'].set_position(('data',0))
 ax.set_yticks([-1,-0.5,0.5,1])
 
-plt.plot(x,y,label='sigmoid',color='blue')
+plt.plot(x,y,label='tanh',color='blue')
 plt.legend()
 plt.show()

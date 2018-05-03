@@ -88,3 +88,21 @@ Leaky ReLu。
 ![derivatives_tanh_02](https://github.com/cxmhfut/DeepLearning.ai/blob/master/images/derivatives_tanh_02.png)
 
 ![derivatives_relu](https://github.com/cxmhfut/DeepLearning.ai/blob/master/images/derivatives_relu.png)
+
+## 9 Gradient descent for neural networks
+
+![propagation_forward](https://github.com/cxmhfut/DeepLearning.ai/blob/master/images/propagation_forward.png)
+
+![propagation_back](https://github.com/cxmhfut/DeepLearning.ai/blob/master/images/propagation_back.png)
+
+## 10 Back propagation intuition
+
+![back_propagation_01](https://github.com/cxmhfut/DeepLearning.ai/blob/master/images/back_propagation_01.png)
+
+![back_propagation_02](https://github.com/cxmhfut/DeepLearning.ai/blob/master/images/back_propagation_02.png)
+
+## 11 Random Initialization
+
+![random_initialization_01](https://github.com/cxmhfut/DeepLearning.ai/blob/master/images/random_initialization_01.png)
+
+![random_initialization_02](https://github.com/cxmhfut/DeepLearning.ai/blob/master/images/random_initialization_02.png)

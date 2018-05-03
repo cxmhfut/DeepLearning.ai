@@ -78,3 +78,13 @@ Leaky ReLu。
 在隐层用线性函数的，除了一些特殊情况，比如与压缩有关的，那方面在这里将不深入讨论。
 在这之外， 在隐层使用线性激活函数非常少见。因为房价都是非负数，所以我们也可以在输
 出层使用 ReLU 函数这样你的ŷ都大于等于 0。
+
+## 8 Derivatives of activation functions
+
+![derivatives_sigmoid](https://github.com/cxmhfut/DeepLearning.ai/blob/master/images/derivatives_sigmoid.png)
+
+![derivatives_tanh_01](https://github.com/cxmhfut/DeepLearning.ai/blob/master/images/derivatives_tanh_01.png)
+
+![derivatives_tanh_02](https://github.com/cxmhfut/DeepLearning.ai/blob/master/images/derivatives_tanh_02.png)
+
+![derivatives_relu](https://github.com/cxmhfut/DeepLearning.ai/blob/master/images/derivatives_relu.png)

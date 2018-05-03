@@ -97,9 +97,9 @@ Leaky ReLu。
 
 ## 10 Back propagation intuition
 
-![back_propagation_01](https://github.com/cxmhfut/DeepLearning.ai/blob/master/images/back_propagation_01.png)
+![back_propagation_intuition_01](https://github.com/cxmhfut/DeepLearning.ai/blob/master/images/back_propagation_intuition_01.png)
 
-![back_propagation_02](https://github.com/cxmhfut/DeepLearning.ai/blob/master/images/back_propagation_02.png)
+![back_propagation_intuition_02](https://github.com/cxmhfut/DeepLearning.ai/blob/master/images/back_propagation_intuition_02.png)
 
 ## 11 Random Initialization
 

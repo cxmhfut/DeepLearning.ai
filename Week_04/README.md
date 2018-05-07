@@ -107,3 +107,53 @@
 始，再试试一到两个隐层，把隐藏层数量当作参数、超参数一样去调试，这样去找比较合适
 的深度。但是近几年以来，有一些人会趋向于使用非常非常深邃的神经网络，比如好几打的
 层数，某些问题中只有这种网络才是最佳模型。
+
+## 5 Building blocks of deep neural networks
+
+![building_blocks_of_deep_neural_networks_01](https://github.com/cxmhfut/DeepLearning.ai/blob/master/images/building_blocks_of_deep_neural_networks_01.png)
+
+![building_blocks_of_deep_neural_networks_02](https://github.com/cxmhfut/DeepLearning.ai/blob/master/images/building_blocks_of_deep_neural_networks_02.png)
+
+## 6 Forward and backward propagation
+
+![forward_and_backward_propagation](https://github.com/cxmhfut/DeepLearning.ai/blob/master/images/forward_and_backward_propagation.png)
+
+## 7 Parameters vs Hyper parameters
+
+![parameters_vs_hyperparameters_01](https://github.com/cxmhfut/DeepLearning.ai/blob/master/images/parameters_vs_hyperparameters_01.png)
+
+比如算法中的 learning rate α学习率）、 iterations(梯度下降法循环的数量)、 L隐藏
+层数目）、 n<sup>[l]</sup>（隐藏层单元数目）、 choice of activation function（激活函数的选择）都需要
+你来设置，这些数字实际上控制了最后的参数W和b的值，所以它们被称作超参数。
+
+实际上深度学习有很多不同的超参数，之后我们也会介绍一些其他的超参数，如
+momentum、 mini batch size、 regularization parameters 等等。
+
+![parameters_vs_hyperparameters_02](https://github.com/cxmhfut/DeepLearning.ai/blob/master/images/parameters_vs_hyperparameters_02.png)
+
+如何寻找超参数的最优值？
+
+走 Idea—Code—Experiment—Idea 这个循环， 尝试各种不同的参数， 实现模型并观察是
+否成功，然后再迭代。
+
+## 8 What does this have to do with brain?
+
+![what_does_this_have_to_do_with_brain](https://github.com/cxmhfut/DeepLearning.ai/blob/master/images/what_does_this_have_to_do_with_brain.png)
+
+深度学习和大脑有什么关联性吗？
+
+关联不大。
+
+那么人们为什么会说深度学习和大脑相关呢？
+
+当你在实现一个神经网络的时候，那些公式是你在做的东西，你会做前向传播、反向传
+播、梯度下降法，其实很难表述这些公式具体做了什么，深度学习像大脑这样的类比其实是
+过度简化了我们的大脑具体在做什么，但因为这种形式很简洁，也能让普通人更愿意公开讨
+论，也方便新闻报道并且吸引大众眼球，但这个类比是非常不准确的。
+
+一个神经网络的逻辑单元可以看成是对一个生物神经元的过度简化，但迄今为止连神经
+科学家都很难解释究竟一个神经元能做什么，它可能是极其复杂的；它的一些功能可能真的
+类似 logistic 回归的运算，但单个神经元到底在做什么目前还没有人能够真正可以解释。
+
+深度学习的确是个很好的工具来学习各种很灵活很复杂的函数，学习到从��映射，
+在监督学习中学到输入到输出的映射。

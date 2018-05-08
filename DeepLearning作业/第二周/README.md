@@ -7,7 +7,7 @@
 - C A neuron computes a function g that scales the input x linearly (Wx + b)
 - D A neuron computes the mean of all features before applying the output to an activation function
 
-<h3> 2  </h3>
+<h3> 2 Which of these is the "Logistic Loss"? </h3>
 
 - A L<sup>(i)</sup>(ŷ<sup>(i)</sup>,y<sup>(i)</sup>)=−(y<sup>(i)</sup>log(ŷ<sup>(i)</sup>)+(1−y<sup>(i)</sup>)log(1−ŷ<sup>(i)</sup>))
 - B L<sup>(i)</sup>(ŷ<sup>(i)</sup>,y<sup>(i)</sup>)=∣y<sup>(i)</sup>−ŷ<sup>(i)</sup>∣

@@ -93,10 +93,23 @@ A is tanh, B is sigmoid, C is ReLU, D is Leaky ReLU
 - A True
 - B False
 
+<h5>Answer:B</h5>
+
 <h3> 7 A demographic dataset with statistics on different cities' population, GDP per capita, economic growth is an example of “unstructured” data because it contains data coming from different sources. True/False? </h3>
 
 - A True
 - B False
+
+结构化数据意味着数
+据的基本数据库。例如在房价预测中，你可能有一个数据库，有专门的几列数据告诉你卧室
+的大小和数量，这就是结构化数据。或预测用户是否会点击广告，你可能会得到关于用户的
+信息，比如年龄以及关于广告的一些信息，然后对你的预测分类标注，这就是结构化数据，
+意思是每个特征，比如说房屋大小卧室数量，或者是一个用户的年龄，都有一个很好的定义。
+
+相反非结构化数据是指比如音频，原始音频或者你想要识别的图像或文本中的内容。这
+里的特征可能是图像中的像素值或文本中的单个单词。
+
+<h5>Answer:B</h5>
 
 <h3> 8 Why is an RNN (Recurrent Neural Network) used for machine translation, say translating English to French? (Check all that apply.) </h3>
 
@@ -104,6 +117,12 @@ A is tanh, B is sigmoid, C is ReLU, D is Leaky ReLU
 - B It is strictly more powerful than a Convolutional Neural Network (CNN).
 - C It is applicable when the input/output is a sequence (e.g., a sequence of words).
 - D RNNs represent the recurrent process of Idea->Code->Experiment->Idea->....
+
+RNN在语音识别，语言建模，翻译，图片描述等问题上已经取得一定成功。它是一种监督学习，比如输入数据英文，标签为法文。RNN 可以被看做是同一神经网络的多次赋值，
+每个神经网络模块会把消息传递给下一个，所以它是链式的，链式的特征揭示了 RNN 本质上是与序列和列表相关的，所以它在解决sequence上是毫无问题的。
+要说哪个完全比另一个强，基本都是错的。
+
+<h5>Answer:AC</h5>
 
 <h3> 9 In this diagram which we hand-drew in lecture, what do the horizontal axis (x-axis) and vertical axis (y-axis) represent? </h3>
 
@@ -122,9 +141,24 @@ A is tanh, B is sigmoid, C is ReLU, D is Leaky ReLU
 >* x-axis is the amount of data
 >* y-axis (vertical axis) is the performance of the algorithm.
 
+在过去的几年里，很多人都问我为什么深度学习能够如此有效。当我回答这个问题时，
+我通常给他们画个图，在水平轴上画一个形状，在此绘制出所有任务的数据量，而在垂直轴
+上，画出机器学习算法的性能。比如说准确率体现在垃圾邮件过滤或者广告点击预测，或者
+是神经网络在自动驾驶汽车时判断位置的准确性，根据图像可以发现，如果你把一个传统机
+器学习算法的性能画出来，作为数据量的一个函数，你可能得到一个弯曲的线，就像图中这
+样，它的性能一开始在增加更多数据时会上升，但是一段变化后它的性能就会像一个高原一
+样。假设你的水平轴拉的很长很长，它们不知道如何处理规模巨大的数据，而过去十年的社
+会里，我们遇到的很多问题只有相对较少的数据量。
+
+<h5>Answer:D</h5>
+
 <h3> 10 Assuming the trends described in the previous question's figure are accurate (and hoping you got the axis labels right), which of the following are true? (Check all that apply.) </h3>
 
 - A Decreasing the training set size generally does not hurt an algorithm’s performance, and it may help significantly.
 - B Decreasing the size of a neural network generally does not hurt an algorithm’s performance, and it may help significantly.
 - C Increasing the training set size generally does not hurt an algorithm’s performance, and it may help significantly.
 - D Increasing the size of a neural network generally does not hurt an algorithm’s performance, and it may help significantly.
+
+总的来说，对于相同的数据量，只要足够多了，那么大型神经网络的表现更好。对同一个神经网络，数据量越多，其表现越好。
+
+<h5>Answer:CD</h5>

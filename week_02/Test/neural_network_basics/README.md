@@ -1,4 +1,4 @@
-## Practice Questions
+## Neural Network Basics
 
 <h3> 1 What does a neuron compute? </h3>
 

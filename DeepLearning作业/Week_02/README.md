@@ -205,7 +205,7 @@ print(np.dot(a,b))
  [50]]
 ```
 
-<h5>Answer:C</h5>
+<h5>Answer:A</h5>
 
 <h3> 10 Consider the following computation graph. What is the output J? </h3>
 
@@ -223,4 +223,4 @@ J = u + v - w
   = (a - 1)*(b + c)
 ```
 
-<h5>Answer:C</h5>
+<h5>Answer:B</h5>

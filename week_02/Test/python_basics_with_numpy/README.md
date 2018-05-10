@@ -135,12 +135,11 @@ Expected Output:sigmoid([1,2,3])	array([ 0.73105858, 0.88079708, 0.95257413])
 ```
 
 ```python
-# GRADED FUNCTION: basic_sigmoid
-
 import math
 import numpy as np
 
 
+# GRADED FUNCTION: basic_sigmoid
 def basic_sigmoid(x):
     """
     Compute sigmoid of x.
@@ -159,20 +158,7 @@ def basic_sigmoid(x):
     return s
 
 
-print('basic_sigmoid(3):', basic_sigmoid(3))
-
-# example of vector operation
-x = np.array([1, 2, 3])
-print('x:', x)
-print('x + 3:', x + 3)
-
-# example of np.exp
-x = np.array([1, 2, 3])
-print('np.exp(x):', np.exp(x))  # result is (exp(1), exp(2), exp(3))
-
-
 # GRADED FUNCTION: sigmoid
-
 def sigmoid(x):
     """
     Compute the sigmoid of x
@@ -191,8 +177,20 @@ def sigmoid(x):
     return s
 
 
-x = np.array([1, 2, 3])
-print('sigmoid(x):', sigmoid(x))
+if __name__ == '__main__':
+    print('basic_sigmoid(3):', basic_sigmoid(3))
+
+    # example of vector operation
+    x = np.array([1, 2, 3])
+    print('x:', x)
+    print('x + 3:', x + 3)
+
+    # example of np.exp
+    x = np.array([1, 2, 3])
+    print('np.exp(x):', np.exp(x))  # result is (exp(1), exp(2), exp(3))
+
+    x = np.array([1, 2, 3])
+    print('sigmoid(x):', sigmoid(x))
 ```
 ```
 basic_sigmoid(3): 0.9525741268224334
@@ -201,3 +199,84 @@ x + 3: [4 5 6]
 np.exp(x): [  2.71828183   7.3890561   20.08553692]
 sigmoid(x): [ 0.73105858  0.88079708  0.95257413]
 ```
+
+<h4> 1.2 Sigmoid gradient </h4>
+
+As you've seen in lecture, you will need to compute gradients to optimize loss functions using backpropagation. 
+Let's code your first gradient function.
+
+<h5>Exercise:</h5> 
+Implement the function sigmoid_grad() to compute the gradient of the sigmoid function with respect to its input x. 
+The formula is:sigmoid_derivative(x)=σ′(x)=σ(x)(1−σ(x))
+
+You often code this function in two steps:
+- 1.Set s to be the sigmoid of x. You might find your sigmoid(x) function useful.
+- 2.Compute  σ′(x)=s(1−s)σ′(x)=s(1−s)
+
+```
+# GRADED FUNCTION: sigmoid_derivative
+​
+def sigmoid_derivative(x):
+    """
+    Compute the gradient (also called the slope or derivative) of the sigmoid function with respect to its input x.
+    You can store the output of the sigmoid function into variables and then use it to calculate the gradient.
+    
+    Arguments:
+    x -- A scalar or numpy array
+​
+    Return:
+    ds -- Your computed gradient.
+    """
+    
+    ### START CODE HERE ### (≈ 2 lines of code)
+    s = None
+    ds = None
+    ### END CODE HERE ###
+    
+    return ds
+    
+x = np.array([1, 2, 3])
+print ("sigmoid_derivative(x) = " + str(sigmoid_derivative(x)))
+```
+
+```
+Expected Output:sigmoid_derivative([1,2,3])	[ 0.19661193 0.10499359 0.04517666]
+```
+
+```python
+from week_02.Test.python_basics_with_numpy.python_basics_with_numpy_1_1 import sigmoid
+import numpy as np
+
+
+# GRADED FUNCTION: sigmoid_derivative
+def sigmoid_derivative(x):
+    """
+    Compute the gradient (also called the slope or derivative) of the sigmoid function with respect to its input x.
+    You can store the output of the sigmoid function into variables and then use it to calculate the gradient.
+
+    Arguments:
+    x -- A scalar or numpy array
+​
+    Return:
+    ds -- Your computed gradient.
+    """
+
+    ### START CODE HERE ### (≈ 2 lines of code)
+    s = sigmoid(x)
+    ds = s * (1 - s)
+    ### END CODE HERE ###
+
+    return ds
+
+
+x = np.array([1, 2, 3])
+print("sigmoid_derivative(x) = " + str(sigmoid_derivative(x)))
+```
+```
+sigmoid_derivative(x) = [ 0.19661193  0.10499359  0.04517666]
+```
+
+<h4> 1.3 Reshaping arrays </h4>
+<h4> 1.4 Normalizing rows </h4>
+<h4> 1.5 Broadcasting and the softmax function </h4>
+<h4> 2.1 Implement the L1 and L2 loss functions </h4>

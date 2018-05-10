@@ -99,7 +99,7 @@ ValueError: operands could not be broadcast together with shapes (4,3) (3,2)
 - C (m,n<sub>x</sub>)
 - D (1,m)
 
-<h5>Answer:C</h5>
+<h5>Answer:B</h5>
 
 <h3> 7 Recall that "np.dot(a,b)" performs a matrix multiplication on a and b, whereas "a*b" performs an element-wise multiplication. Consider the two following random arrays "a" and "b": </h3>
 

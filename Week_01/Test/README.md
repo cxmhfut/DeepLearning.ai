@@ -1,4 +1,4 @@
-## Practice Questions
+## Introduction to Deep Learning
 
 <h3> 1 What does the analogy “AI is the new electricity” refer to? </h3>
 

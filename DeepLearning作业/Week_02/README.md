@@ -143,6 +143,32 @@ for i in range(3):
 - C c = a + b.T
 - D c = a + b
 
+```python
+import numpy as np
+
+a = np.random.rand(3,4)
+b = np.random.rand(4,1)
+c = np.zeros((3,4))
+
+for i in range(3):
+    for j in range(4):
+        c[i][j] = a[i][j] + b[j]
+
+print(a+b.T)
+print(c)
+```
+
+```
+[[ 1.16525447  1.57823848  1.53159458  0.2090474 ]
+ [ 0.64176554  1.43381822  0.72112773  0.87406797]
+ [ 0.24194739  0.96539963  1.21586187  0.84750297]]
+[[ 1.16525447  1.57823848  1.53159458  0.2090474 ]
+ [ 0.64176554  1.43381822  0.72112773  0.87406797]
+ [ 0.24194739  0.96539963  1.21586187  0.84750297]]
+```
+
+<h5>Answer:C</h5>
+
 <h3> 9 Consider the following code: What will be c? (If you’re not sure, feel free to run this in python to find out).</h3>
 
 ```
@@ -155,6 +181,32 @@ c = a * b
 - C This will multiply a 3x3 matrix a with a 3x1 vector, thus resulting in a 3x1 vector. That is, c.shape = (3,1).
 - D It will lead to an error since you cannot use “*” to operate on these two matrices. You need to instead use np.dot(a,b)
 
+```python
+import numpy as np
+
+a = np.array([[1,2,3],
+              [4,5,6],
+              [7,8,9]])
+
+b = np.array([[1],
+              [2],
+              [3]])
+
+print(a*b)
+print(np.dot(a,b))
+```
+
+```
+[[ 1  2  3]
+ [ 8 10 12]
+ [21 24 27]]
+[[14]
+ [32]
+ [50]]
+```
+
+<h5>Answer:C</h5>
+
 <h3> 10 Consider the following computation graph. What is the output J? </h3>
 
 ![neural_network_basics_10](https://github.com/cxmhfut/DeepLearning.ai/blob/master/images/neural_network_basics_10.png)
@@ -163,3 +215,12 @@ c = a * b
 - B J = (a - 1) * (b + c)
 - C J = a*b + b*c + a*c
 - D J = (b - 1) * (c + a)
+
+```
+J = u + v - w
+  = a*b + a*c - b+c
+  = (a - 1)*b + (a - 1)*c
+  = (a - 1)*(b + c)
+```
+
+<h5>Answer:C</h5>

@@ -36,8 +36,8 @@ print("test_set_y shape: " + str(test_set_y.shape))
 # Reshape the training and test examples
 
 ### START CODE HERE ### (≈ 2 lines of code)
-train_set_x_flatten = train_set_x_orig.reshape(train_set_x_orig.shape[0], -1)
-test_set_x_flatten = test_set_x_orig.reshape(test_set_x_orig.shape[0], -1)
+train_set_x_flatten = train_set_x_orig.reshape(train_set_x_orig.shape[0], -1).T
+test_set_x_flatten = test_set_x_orig.reshape(test_set_x_orig.shape[0], -1).T
 ### END CODE HERE ###
 
 print("train_set_x_flatten shape: " + str(train_set_x_flatten.shape))

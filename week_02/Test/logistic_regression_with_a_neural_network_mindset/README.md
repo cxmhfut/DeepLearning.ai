@@ -1,0 +1,148 @@
+## Logistic Regression with a Neural Network mindset
+
+Welcome to your first (required) programming assignment! 
+You will build a logistic regression classifier to recognize cats. 
+This assignment will step you through how to do this with a Neural Network mindset, 
+and so will also hone your intuitions about deep learning.
+
+<h5>Instructions:</h5>
+- Do not use loops (for/while) in your code, unless the instructions explicitly ask you to do so.
+
+<h5>You will learn to:</h5>
+- Build the general architecture of a learning algorithm, including:
+>* Initializing parameters
+>* Calculating the cost function and its gradient
+>* Using an optimization algorithm (gradient descent)
+- Gather all three functions above into a main model function, in the right order.
+
+<h3> 1 - Packages </h3>
+
+First, let's run the cell below to import all the packages that you will need during this assignment.
+
+- numpy is the fundamental package for scientific computing with Python.
+- h5py is a common package to interact with a dataset that is stored on an H5 file.
+- matplotlib is a famous library to plot graphs in Python.
+- PIL and scipy are used here to test your model with your own picture at the end.
+
+```
+import numpy as np
+import matplotlib.pyplot as plt
+import h5py
+import scipy
+from PIL import Image
+from scipy import ndimage
+from lr_utils import load_dataset
+
+%matplotlib inline
+```
+
+<h3> 2 - Overview of the Problem set </h3>
+
+Problem Statement: You are given a dataset ("data.h5") containing:
+
+- a training set of m_train images labeled as cat (y=1) or non-cat (y=0)
+- a test set of m_test images labeled as cat or non-cat
+- each image is of shape (num_px, num_px, 3) where 3 is for the 3 channels (RGB). Thus, each image is square (height = num_px) and (width = num_px).
+You will build a simple image-recognition algorithm that can correctly classify pictures as cat or non-cat.
+
+Let's get more familiar with the dataset. Load the data by running the following code.
+
+```
+# Loading the data (cat/non-cat)
+train_set_x_orig, train_set_y, test_set_x_orig, test_set_y, classes = load_dataset()
+```
+
+We added "_orig" at the end of image datasets (train and test) because we are going to preprocess them. After preprocessing, we will end up with train_set_x and test_set_x (the labels train_set_y and test_set_y don't need any preprocessing).
+
+Each line of your train_set_x_orig and test_set_x_orig is an array representing an image. You can visualize an example by running the following code. Feel free also to change the index value and re-run to see other images.
+
+```
+# Example of a picture
+index = 25
+plt.imshow(train_set_x_orig[index])
+print ("y = " + str(train_set_y[:, index]) + ", it's a '" + classes[np.squeeze(train_set_y[:, index])].decode("utf-8") +  "' picture.")
+```
+
+Many software bugs in deep learning come from having matrix/vector dimensions that don't fit. 
+If you can keep your matrix/vector dimensions straight you will go a long way toward eliminating many bugs.
+
+<h5>Exercise:</h5> 
+Find the values for:
+
+- m_train (number of training examples)
+- m_test (number of test examples)
+- num_px (= height = width of a training image)
+
+Remember that train_set_x_orig is a numpy-array of shape (m_train, num_px, num_px, 3). For instance, you can access m_train by writing train_set_x_orig.shape[0].
+
+```
+### START CODE HERE ### (≈ 3 lines of code)
+m_train = None
+m_test = None
+num_px = None
+### END CODE HERE ###
+​
+print ("Number of training examples: m_train = " + str(m_train))
+print ("Number of testing examples: m_test = " + str(m_test))
+print ("Height/Width of each image: num_px = " + str(num_px))
+print ("Each image is of size: (" + str(num_px) + ", " + str(num_px) + ", 3)")
+print ("train_set_x shape: " + str(train_set_x_orig.shape))
+print ("train_set_y shape: " + str(train_set_y.shape))
+print ("test_set_x shape: " + str(test_set_x_orig.shape))
+print ("test_set_y shape: " + str(test_set_y.shape))
+```
+```
+Expected Output for m_train, m_test and num_px:
+m_train	209
+m_test	50
+num_px	64
+```
+
+For convenience, you should now reshape images of shape (num_px, num_px, 3) in a numpy-array of shape (num_px  ∗∗  num_px  ∗∗  3, 1). 
+After this, our training (and test) dataset is a numpy-array where each column represents a flattened image. There should be m_train (respectively m_test) columns.
+
+<h5>Exercise:</h5> 
+Reshape the training and test data sets so that images of size (num_px, num_px, 3) are flattened into single vectors of shape (num_px  ∗∗  num_px  ∗∗  3, 1).
+
+A trick when you want to flatten a matrix X of shape (a,b,c,d) to a matrix X_flatten of shape (b ∗∗ c ∗∗ d, a) is to use:
+
+X_flatten = X.reshape(X.shape[0], -1).T      # X.T is the transpose of X
+
+```
+# Reshape the training and test examples
+​
+### START CODE HERE ### (≈ 2 lines of code)
+train_set_x_flatten = None
+test_set_x_flatten = None
+### END CODE HERE ###
+​
+print ("train_set_x_flatten shape: " + str(train_set_x_flatten.shape))
+print ("train_set_y shape: " + str(train_set_y.shape))
+print ("test_set_x_flatten shape: " + str(test_set_x_flatten.shape))
+print ("test_set_y shape: " + str(test_set_y.shape))
+print ("sanity check after reshaping: " + str(train_set_x_flatten[0:5,0]))
+```
+```
+Expected Output:
+train_set_x_flatten shape	(12288, 209)
+train_set_y shape	(1, 209)
+test_set_x_flatten shape	(12288, 50)
+test_set_y shape	(1, 50)
+sanity check after reshaping	[17 31 56 22 33]
+```
+To represent color images, the red, green and blue channels (RGB) must be specified for each pixel, and so the pixel value is actually a vector of three numbers ranging from 0 to 255.
+
+One common preprocessing step in machine learning is to center and standardize your dataset, meaning that you substract the mean of the whole numpy array from each example, and then divide each example by the standard deviation of the whole numpy array. But for picture datasets, it is simpler and more convenient and works almost as well to just divide every row of the dataset by 255 (the maximum value of a pixel channel).
+
+Let's standardize our dataset.
+```
+train_set_x = train_set_x_flatten/255.
+test_set_x = test_set_x_flatten/255.
+```
+What you need to remember:
+
+Common steps for pre-processing a new dataset are:
+
+- Figure out the dimensions and shapes of the problem (m_train, m_test, num_px, ...)
+- Reshape the datasets such that each example is now a vector of size (num_px * num_px * 3, 1)
+- "Standardize" the data

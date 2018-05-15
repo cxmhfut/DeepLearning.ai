@@ -859,6 +859,69 @@ Train Accuracy	99.04306220095694 %
 Test Accuracy	70.0 %
 ```
 
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+from week_02.Test.logistic_regression_with_a_neural_network_mindset.lr_utils import load_dataset
+from week_02.Test.logistic_regression_with_a_neural_network_mindset.load_data import load_data
+from week_02.Test.logistic_regression_with_a_neural_network_mindset.model import model
+
+# Loading the data (cat/non-cat)
+train_set_x_orig, _, test_set_x_orig, _, classes = load_dataset()
+train_set_x, train_set_y, test_set_x, test_set_y = load_data()
+num_iterations = 2000
+learning_rate = 0.005
+num_px = train_set_x_orig.shape[1]
+
+
+def train(print_cost=False):
+    d = model(train_set_x, train_set_y, test_set_x, test_set_y, num_iterations, learning_rate, print_cost)
+    return d
+
+
+if __name__ == '__main__':
+    d = train(True)
+
+    # Example of a picture that was wrongly classified.
+    index = 1
+    plt.imshow(test_set_x[:, index].reshape((num_px, num_px, 3)))
+    plt.show()
+    print("y = " + str(test_set_y[0, index]) + ", you predicted that it is a \"" + classes[
+        int(d["Y_prediction_test"][0, index])].decode("utf-8") + "\" picture.")
+
+    # Plot learning curve (with costs)
+    costs = np.squeeze(d['costs'])
+    plt.plot(costs)
+    plt.ylabel('cost')
+    plt.xlabel('iterations (per hundreds)')
+    plt.title("Learning rate =" + str(d["learning_rate"]))
+    plt.show()
+```
+```
+Cost after iteration 0: 0.693147
+Cost after iteration 100: 0.584508
+Cost after iteration 200: 0.466949
+Cost after iteration 300: 0.376007
+Cost after iteration 400: 0.331463
+Cost after iteration 500: 0.303273
+Cost after iteration 600: 0.279880
+Cost after iteration 700: 0.260042
+Cost after iteration 800: 0.242941
+Cost after iteration 900: 0.228004
+Cost after iteration 1000: 0.214820
+Cost after iteration 1100: 0.203078
+Cost after iteration 1200: 0.192544
+Cost after iteration 1300: 0.183033
+Cost after iteration 1400: 0.174399
+Cost after iteration 1500: 0.166521
+Cost after iteration 1600: 0.159305
+Cost after iteration 1700: 0.152667
+Cost after iteration 1800: 0.146542
+Cost after iteration 1900: 0.140872
+train accuracy: 99.04306220095694 %
+test accuracy: 70.0 %
+y = 1, you predicted that it is a "cat" picture.
+```
 Comment: Training accuracy is close to 100%. This is a good sanity check: your model is working and has high enough capacity to fit the training data. Test error is 68%. It is actually not bad for this simple model, given the small dataset we used and that logistic regression is a linear classifier. But no worries, you'll build an even better classifier next week!
 
 Also, you see that the model is clearly overfitting the training data. Later in this specialization you will learn how to reduce overfitting, for example by using regularization. Using the code below (and changing the index variable) you can look at predictions on pictures of the test set.
@@ -869,6 +932,8 @@ index = 1
 plt.imshow(test_set_x[:,index].reshape((num_px, num_px, 3)))
 print ("y = " + str(test_set_y[0,index]) + ", you predicted that it is a \"" + classes[d["Y_prediction_test"][0,index]].decode("utf-8") +  "\" picture.")
 ```
+
+![merge_all_function_into_a_model_05_1](https://github.com/cxmhfut/DeepLearning.ai/blob/master/images/merge_all_function_into_a_model_05_1.png)
 
 Let's also plot the cost function and the gradients.
 
@@ -881,6 +946,8 @@ plt.xlabel('iterations (per hundreds)')
 plt.title("Learning rate =" + str(d["learning_rate"]))
 plt.show()
 ```
+
+![merge_all_function_into_a_model_05_2](https://github.com/cxmhfut/DeepLearning.ai/blob/master/images/merge_all_function_into_a_model_05_2.png)
 
 Interpretation: You can see the cost decreasing. 
 It shows that the parameters are being learned. 

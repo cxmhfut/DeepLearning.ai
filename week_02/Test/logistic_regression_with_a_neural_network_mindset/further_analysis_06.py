@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 from week_02.Test.logistic_regression_with_a_neural_network_mindset.load_data import load_data
 from week_02.Test.logistic_regression_with_a_neural_network_mindset.model import model
 
-train_set_x, train_set_y, test_set_x, test_set_y, data_config = load_data()
+train_set_x, train_set_y, test_set_x, test_set_y = load_data()
 
 learning_rates = [0.01, 0.001, 0.0001]
 models = {}

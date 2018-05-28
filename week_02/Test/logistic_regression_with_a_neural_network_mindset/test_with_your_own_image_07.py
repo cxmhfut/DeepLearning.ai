@@ -2,9 +2,15 @@ import numpy as np
 import matplotlib.pyplot as plt
 import scipy
 from scipy import ndimage
+from week_02.Test.logistic_regression_with_a_neural_network_mindset.lr_utils import load_dataset
 from week_02.Test.logistic_regression_with_a_neural_network_mindset.helper_functions import predict
+from week_02.Test.logistic_regression_with_a_neural_network_mindset.train import train
 
+# Loading the data (cat/non-cat)
+train_set_x_orig, _, test_set_x_orig, _, classes = load_dataset()
+num_px = train_set_x_orig.shape[1]
 
+d = train()
 
 ## START CODE HERE ## (PUT YOUR IMAGE NAME)
 my_image = "my_image.jpg"   # change this to the name of your image file

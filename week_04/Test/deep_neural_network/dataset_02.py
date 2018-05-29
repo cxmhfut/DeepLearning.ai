@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
-from week_04.Test.deep_neural_network.lr_utils import load_dataset
+from week_04.Test.deep_neural_network.dnn_app_utils_v2 import load_data
 
-train_x_orig, train_y, test_x_orig, test_y, classes = load_dataset()
+train_x_orig, train_y, test_x_orig, test_y, classes = load_data()
 
 # Example of picture
 index = 10

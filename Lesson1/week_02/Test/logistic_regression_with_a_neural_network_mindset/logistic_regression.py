@@ -1,11 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
-import h5py
-import scipy
-from PIL import Image
-from scipy import ndimage
-from week_02.Test.logistic_regression_with_a_neural_network_mindset.lr_utils import load_dataset
-from week_02.Test.logistic_regression_with_a_neural_network_mindset.model import model
+from Lesson1.week_02.Test.logistic_regression_with_a_neural_network_mindset.lr_utils import load_dataset
+from Lesson1.Test.logistic_regression_with_a_neural_network_mindset.model import model
 
 # %matplotlib inline
 

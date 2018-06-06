@@ -1,7 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
-from week_02.Test.logistic_regression_with_a_neural_network_mindset.load_data import load_data
-from week_02.Test.logistic_regression_with_a_neural_network_mindset.model import model
+from Lesson1.week_02.Test.logistic_regression_with_a_neural_network_mindset.load_data import load_data
+from Lesson1.week_02.Test.logistic_regression_with_a_neural_network_mindset.model import model
 
 train_set_x, train_set_y, test_set_x, test_set_y = load_data()
 

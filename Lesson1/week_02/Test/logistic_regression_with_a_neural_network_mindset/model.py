@@ -1,4 +1,4 @@
-from week_02.Test.logistic_regression_with_a_neural_network_mindset.helper_functions import *
+from Lesson1.week_02.Test.logistic_regression_with_a_neural_network_mindset.helper_functions import *
 
 
 # GRADED FUNCTION: model

@@ -41,7 +41,7 @@ Answer:BD
 - A Estimating P(y<sup><1></sup>,y<sup><2></sup>,...,y<sup><t-1></sup>)
 - B Estimating P(y<sup>\<t></sup>)
 - C Estimating P(y<sup>\<t></sup> | y<sup><1></sup>,y<sup><2></sup>,...,y<sup><t-1></sup>)
-- D Estimating P(y<sup>\<t></sup> | y<sup><1></sup>,y<sup><2></sup>,...,y<sup><t></sup>)
+- D Estimating P(y<sup>\<t></sup> | y<sup><2></sup>,y<sup><2></sup>,...,y<sup><t></sup>)
 
 Answer:C
 

@@ -59,7 +59,7 @@ def sample(parameters, char_to_ix, seed):
 
     # Loop over time-steps t. At each time-step, sample a character from a probability distribution and append
     # its index to "indices". We'll stop if we reach 50 characters (which should be very unlikely with a well
-    # trained model), which helps debugging and prevents entering an infinite loop.
+    # trained models), which helps debugging and prevents entering an infinite loop.
     counter = 0
     newline_character = char_to_ix['\n']
 

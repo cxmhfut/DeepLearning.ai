@@ -1,11 +1,11 @@
 from course1.week_02.Test.logistic_regression_with_a_neural_network_mindset.helper_functions import *
 
 
-# GRADED FUNCTION: model
+# GRADED FUNCTION: models
 
 def model(X_train, Y_train, X_test, Y_test, num_iterations=2000, learning_rate=0.5, print_cost=False):
     """
-    Builds the logistic regression model by calling the function you've implemented previously
+    Builds the logistic regression models by calling the function you've implemented previously
 
     Arguments:
     X_train -- training set represented by a numpy array of shape (num_px * num_px * 3, m_train)
@@ -17,7 +17,7 @@ def model(X_train, Y_train, X_test, Y_test, num_iterations=2000, learning_rate=0
     print_cost -- Set to true to print the cost every 100 iterations
 
     Returns:
-    d -- dictionary containing information about the model.
+    d -- dictionary containing information about the models.
     """
 
     ### START CODE HERE ###

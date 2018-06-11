@@ -402,7 +402,7 @@ def predict(X, y, parameters):
     
     Arguments:
     X -- data set of examples you would like to label
-    parameters -- parameters of the trained model
+    parameters -- parameters of the trained models
     
     Returns:
     p -- predictions for the given dataset X

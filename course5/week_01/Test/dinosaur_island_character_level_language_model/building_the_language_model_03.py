@@ -5,7 +5,7 @@ from course5.week_01.Test.dinosaur_island_character_level_language_model.buiding
 
 def optimize(X, Y, a_prev, parameters, learning_rate=0.01):
     """
-    Execute one step of the optimization to train the model.
+    Execute one step of the optimization to train the models.
 
     Arguments:
     X -- list of integers, where each integer is a number that maps to a character in the vocabulary.
@@ -17,7 +17,7 @@ def optimize(X, Y, a_prev, parameters, learning_rate=0.01):
                         Wya -- Weight matrix relating the hidden-state to the output, numpy array of shape (n_y, n_a)
                         b --  Bias, numpy array of shape (n_a, 1)
                         by -- Bias relating the hidden-state to the output, numpy array of shape (n_y, 1)
-    learning_rate -- learning rate for the model.
+    learning_rate -- learning rate for the models.
 
     Returns:
     loss -- value of the loss function (cross-entropy)
@@ -49,17 +49,17 @@ def optimize(X, Y, a_prev, parameters, learning_rate=0.01):
     return loss, gradients, a[len(X) - 1]
 
 
-# GRADED FUNCTION: model
+# GRADED FUNCTION: models
 
 def model(data, ix_to_char, char_to_ix, num_iterations=35000, n_a=50, dino_names=7, vocab_size=27):
     """
-    Trains the model and generates dinosaur names.
+    Trains the models and generates dinosaur names.
 
     Arguments:
     data -- text corpus
     ix_to_char -- dictionary that maps the index to a character
     char_to_ix -- dictionary that maps a character to an index
-    num_iterations -- number of iterations to train the model for
+    num_iterations -- number of iterations to train the models for
     n_a -- number of units of the RNN cell
     dino_names -- number of dinosaur names you want to sample at each iteration.
     vocab_size -- number of unique characters found in the text, size of the vocabulary
@@ -108,7 +108,7 @@ def model(data, ix_to_char, char_to_ix, num_iterations=35000, n_a=50, dino_names
         # Use a latency trick to keep the loss smooth. It happens here to accelerate the training.
         loss = smooth(loss, curr_loss)
 
-        # Every 2000 Iteration, generate "n" characters thanks to sample() to check if the model is learning properly
+        # Every 2000 Iteration, generate "n" characters thanks to sample() to check if the models is learning properly
         if j % 2000 == 0:
 
             print('Iteration: %d, Loss: %f' % (j, loss) + '\n')

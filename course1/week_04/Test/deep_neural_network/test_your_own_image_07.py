@@ -14,7 +14,7 @@ test_x = test_x_flatten / 255.
 num_px = train_x_orig.shape[1]
 
 ### CONSTANTS ###
-layers_dims = [12288, 20, 7, 5, 1]  # 5-layer model
+layers_dims = [12288, 20, 7, 5, 1]  # 5-layer models
 parameters = L_layer_model(train_x, train_y, layers_dims, num_iterations=2500, print_cost=True)
 
 ## START CODE HERE ##
@@ -29,4 +29,4 @@ my_predicted_image = predict(my_image, my_label_y, parameters)
 
 plt.imshow(image)
 plt.show()
-print ("y = " + str(np.squeeze(my_predicted_image)) + ", your L-layer model predicts a \"" + classes[int(np.squeeze(my_predicted_image)),].decode("utf-8") +  "\" picture.")
+print ("y = " + str(np.squeeze(my_predicted_image)) + ", your L-layer models predicts a \"" + classes[int(np.squeeze(my_predicted_image)),].decode("utf-8") +  "\" picture.")

@@ -11,3 +11,11 @@
 ## 5 Learning word embeddings
 
 ## 6 Word2Vec
+
+## 7 Negative Sampling
+
+## 8 
+
+## 9
+
+## 10

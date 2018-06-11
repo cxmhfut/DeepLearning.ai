@@ -9,7 +9,7 @@ train_x = train_x_flatten / 255.
 test_x = test_x_flatten / 255.
 
 ### CONSTANTS ###
-layers_dims = [12288, 20, 7, 5, 1]  # 5-layer model
+layers_dims = [12288, 20, 7, 5, 1]  # 5-layer models
 
 
 # GRADED FUNCTION: L_layer_model
@@ -27,7 +27,7 @@ def L_layer_model(X, Y, layers_dims, learning_rate=0.0075, num_iterations=3000, 
     print_cost -- if True, it prints the cost every 100 steps
 
     Returns:
-    parameters -- parameters learnt by the model. They can then be used to predict.
+    parameters -- parameters learnt by the models. They can then be used to predict.
     """
 
     np.random.seed(1)

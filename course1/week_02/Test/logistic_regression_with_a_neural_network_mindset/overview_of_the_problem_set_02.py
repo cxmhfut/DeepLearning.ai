@@ -1,6 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
-from week_02.Test.logistic_regression_with_a_neural_network_mindset.lr_utils import load_dataset
+from course1.week_02.Test.logistic_regression_with_a_neural_network_mindset.lr_utils import load_dataset
 
 # Loading the data (cat/non-cat)
 train_set_x_orig, train_set_y, test_set_x_orig, test_set_y, classes = load_dataset()

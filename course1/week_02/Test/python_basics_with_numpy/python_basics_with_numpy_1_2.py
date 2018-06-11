@@ -1,4 +1,4 @@
-from week_02.Test.python_basics_with_numpy.python_basics_with_numpy_1_1 import sigmoid
+from course1.week_02.Test.python_basics_with_numpy.python_basics_with_numpy_1_1 import sigmoid
 import numpy as np
 
 

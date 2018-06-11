@@ -1,4 +1,4 @@
-from Lesson5.week_01.Test.building_a_recurrent_neural_network.run_utils import *
+from course5.week_01.Test.building_a_recurrent_neural_network.run_utils import *
 
 # GRADED FUNCTION: rnn_cell_forward
 

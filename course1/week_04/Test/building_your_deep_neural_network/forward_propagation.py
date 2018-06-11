@@ -1,6 +1,5 @@
-import numpy as np
-from week_04.Test.building_your_deep_neural_network.testCases_v2 import linear_forward_test_case,linear_activation_forward_test_case,L_model_forward_test_case
-from week_04.Test.building_your_deep_neural_network.dnn_utils_v2 import sigmoid,relu
+from course1.week_04.Test.building_your_deep_neural_network.testCases_v2 import *
+from course1.week_04.Test.building_your_deep_neural_network.dnn_utils_v2 import sigmoid,relu
 
 
 # GRADED FUNCTION: linear_forward

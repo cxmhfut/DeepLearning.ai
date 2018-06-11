@@ -1,5 +1,5 @@
 import numpy as np
-from week_04.Test.building_your_deep_neural_network.testCases_v2 import compute_cost_test_case
+from course1.week_04.Test.building_your_deep_neural_network.testCases_v2 import compute_cost_test_case
 
 # GRADED FUNCTION: compute_cost
 

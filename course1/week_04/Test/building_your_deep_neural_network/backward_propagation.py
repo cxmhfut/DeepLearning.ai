@@ -1,7 +1,5 @@
-import numpy as np
-from week_04.Test.building_your_deep_neural_network.testCases_v2 import linear_backward_test_case, \
-    linear_activation_backward_test_case, L_model_backward_test_case,update_parameters_test_case
-from week_04.Test.building_your_deep_neural_network.dnn_utils_v2 import relu_backward, sigmoid_backward
+from course1.week_04.Test.building_your_deep_neural_network.testCases_v2 import *
+from course1.week_04.Test.building_your_deep_neural_network.dnn_utils_v2 import *
 
 
 # GRADED FUNCTION: linear_backward# GRADED

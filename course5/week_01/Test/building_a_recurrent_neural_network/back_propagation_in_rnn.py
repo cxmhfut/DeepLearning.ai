@@ -1,4 +1,4 @@
-from Lesson5.week_01.Test.building_a_recurrent_neural_network.forward_propagation_for_the_basic_rnn import *
+from course5.week_01.Test.building_a_recurrent_neural_network.forward_propagation_for_the_basic_rnn import *
 
 def rnn_cell_backward(da_next, cache):
     """

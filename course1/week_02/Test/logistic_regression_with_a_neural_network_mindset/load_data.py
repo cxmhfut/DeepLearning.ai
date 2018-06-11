@@ -1,4 +1,4 @@
-from Lesson1.week_02.Test.logistic_regression_with_a_neural_network_mindset.lr_utils import load_dataset
+from course1.week_02.Test.logistic_regression_with_a_neural_network_mindset.lr_utils import load_dataset
 
 
 def load_data():

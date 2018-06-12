@@ -14,8 +14,8 @@
 
 ## 7 Negative Sampling
 
-## 8 
+## 8 GloVe word vectors
 
-## 9
+## 9 Sentiment Classification
 
-## 10
+## 10 Debiasing word embeddings

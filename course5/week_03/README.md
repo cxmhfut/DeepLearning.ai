@@ -10,14 +10,18 @@
 
 ## 5 Error analysis on beam search
 
-## 6 
+## 6 Bleu score(optional)
 
-## 7 
+## 7 Attention model intuition
 
-## 8 
+## 8 Attention model
 
-## 9 
+# Audio data
 
-## 10 
+## 9 Speech recognition
 
-## 11 
+## 10 Trigger word detection
+
+# Conclusion
+
+## 11 Summary and thank you

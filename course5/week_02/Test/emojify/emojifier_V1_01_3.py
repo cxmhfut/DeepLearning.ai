@@ -1,5 +1,6 @@
 from course5.week_02.Test.emojify.emo_utils import *
-from course5.week_02.Test.emojify.baseline_model_01_1and2 import load_data
+from course5.week_02.Test.emojify.emojifier_V1_01_1and2 import load_data
+
 
 # GRADED FUNCTION: sentence_to_avg
 
@@ -72,14 +73,14 @@ def model(X, Y, word_to_vec_map, learning_rate=0.01, num_iterations=400):
 
             ### START CODE HERE ### (≈ 4 lines of code)
             # Average the word vectors of the words from the i'th training example
-            avg = sentence_to_avg(X[i],word_to_vec_map)
+            avg = sentence_to_avg(X[i], word_to_vec_map)
 
             # Forward propagate the avg through the softmax layer
-            z = np.matmul(W,avg)+b
+            z = np.matmul(W, avg) + b
             a = softmax(z)
 
             # Compute cost using the i'th training label's one hot representation and "A" (the output of the softmax)
-            cost = -np.dot(Y_oh[i],np.log(a))
+            cost = -np.dot(Y_oh[i], np.log(a))
             ### END CODE HERE ###
 
             # Compute gradients
@@ -97,6 +98,7 @@ def model(X, Y, word_to_vec_map, learning_rate=0.01, num_iterations=400):
 
     return pred, W, b
 
+
 def sentence_to_avg_test_case():
     word = "cucumber"
     index = 289846
@@ -106,14 +108,15 @@ def sentence_to_avg_test_case():
     avg = sentence_to_avg("Morrocan couscous is my favorite dish", word_to_vec_map)
     print("avg = ", avg)
 
+
 if __name__ == '__main__':
     word_to_index, index_to_word, word_to_vec_map = read_glove_vecs('data/glove.6B.50d.txt')
 
-    #sentence_to_avg_test_case()
+    # sentence_to_avg_test_case()
 
-    #Model test case
+    # Model test case
 
-    X_train, Y_train, X_test, Y_test, Y_oh_train, Y_oh_test = load_data()
+    X_train, Y_train, X_test, Y_test, Y_oh_train, Y_oh_test, maxLen = load_data()
 
     print(X_train.shape)
     print(Y_train.shape)

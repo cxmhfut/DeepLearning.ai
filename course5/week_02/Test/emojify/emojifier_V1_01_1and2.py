@@ -16,7 +16,7 @@ def load_data(print_info=False):
     index = 50
     if print_info: print(Y_train[index], "is converted into one hot", Y_oh_train[index])
 
-    return X_train,Y_train,X_test,Y_test,Y_oh_train,Y_oh_test
+    return X_train,Y_train,X_test,Y_test,Y_oh_train,Y_oh_test,maxLen
 
 if __name__ == '__main__':
     load_data(True)

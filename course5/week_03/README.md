@@ -16,6 +16,12 @@
 
 ![attention_model_intuition_01](https://github.com/cxmhfut/DeepLearning.ai/blob/master/images/attention_model_intuition_01.png)
 
+![attention_model_intuition_02](https://github.com/cxmhfut/DeepLearning.ai/blob/master/images/attention_model_intuition_02.png)
+
+![attention_model_intuition_03](https://github.com/cxmhfut/DeepLearning.ai/blob/master/images/attention_model_intuition_03.png)
+
+![attention_model_intuition_04](https://github.com/cxmhfut/DeepLearning.ai/blob/master/images/attention_model_intuition_04.png)
+
 ## 8 Attention model
 
 # Audio data

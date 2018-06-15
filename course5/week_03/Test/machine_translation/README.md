@@ -29,7 +29,7 @@ import matplotlib.pyplot as plt
 
 <h3> 1.1 Dataset </h3>
 
-```
+```python
 from course5.week_03.Test.machine_translation.nmt_utils import *
 
 m = 10000

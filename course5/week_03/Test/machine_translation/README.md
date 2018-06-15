@@ -4,7 +4,7 @@
 
 导入所有需要导入的包
 
-```
+```python
 from keras.layers import Bidirectional, Concatenate, Permute, Dot, Input, LSTM, Multiply
 from keras.layers import RepeatVector, Dense, Activation, Lambda
 from keras.optimizers import Adam
@@ -17,9 +17,9 @@ from faker import Faker
 import random
 from tqdm import tqdm
 from babel.dates import format_date
-from nmt_utils import *
+from course5.week_03.Test.machine_translation.nmt_utils import *
 import matplotlib.pyplot as plt
-%matplotlib inline
+#%matplotlib inline
 ```
 
 ## 1 Translating human readable dates into machine readable dates

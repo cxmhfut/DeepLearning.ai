@@ -3,7 +3,7 @@ from course5.week_03.Test.machine_translation.nmt_utils import *
 m = 10000
 dataset,human_vocab,machine_vocab,inv_vocab = load_dataset(m)
 
-#print(dataset[:10])
+print(dataset[:10])
 
 Tx = 30
 Ty = 10

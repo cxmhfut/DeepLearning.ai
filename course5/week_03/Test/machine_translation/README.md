@@ -69,35 +69,35 @@ print("Target after preprocessing (one-hot):", Yoh[index])
  ('monday may 22 1995', '1995-05-22')]
  
  (10000, 30)
-(10000, 10)
-(10000, 30, 37)
-(10000, 10, 11)
-Source date: 9 may 1998
-Target date: 1998-05-09
+ (10000, 10)
+ (10000, 30, 37)
+ (10000, 10, 11)
+ Source date: 9 may 1998
+ Target date: 1998-05-09
 
-Source after preprocessing (indices): [12  0 24 13 34  0  4 12 12 11 36 36 36 36 36 36 36 36 36 36 36 36 36 36 36
- 36 36 36 36 36]
-Target after preprocessing (indices): [ 2 10 10  9  0  1  6  0  1 10]
+ Source after preprocessing (indices): [12  0 24 13 34  0  4 12 12 11 36 36 36 36 36 36 36 36 36 36 36 36 36 36 36
+  36 36 36 36 36]
+ Target after preprocessing (indices): [ 2 10 10  9  0  1  6  0  1 10]
 
-Source after preprocessing (one-hot): 
-[[ 0.  0.  0. ...,  0.  0.  0.]
- [ 1.  0.  0. ...,  0.  0.  0.]
- [ 0.  0.  0. ...,  0.  0.  0.]
- ..., 
- [ 0.  0.  0. ...,  0.  0.  1.]
- [ 0.  0.  0. ...,  0.  0.  1.]
- [ 0.  0.  0. ...,  0.  0.  1.]]
-Target after preprocessing (one-hot): 
-[[ 0.  0.  1.  0.  0.  0.  0.  0.  0.  0.  0.]
- [ 0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  1.]
- [ 0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  1.]
- [ 0.  0.  0.  0.  0.  0.  0.  0.  0.  1.  0.]
- [ 1.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.]
- [ 0.  1.  0.  0.  0.  0.  0.  0.  0.  0.  0.]
- [ 0.  0.  0.  0.  0.  0.  1.  0.  0.  0.  0.]
- [ 1.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.]
- [ 0.  1.  0.  0.  0.  0.  0.  0.  0.  0.  0.]
- [ 0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  1.]]
+ Source after preprocessing (one-hot): 
+ [[ 0.  0.  0. ...,  0.  0.  0.]
+  [ 1.  0.  0. ...,  0.  0.  0.]
+  [ 0.  0.  0. ...,  0.  0.  0.]
+    ..., 
+  [ 0.  0.  0. ...,  0.  0.  1.]
+  [ 0.  0.  0. ...,  0.  0.  1.]
+  [ 0.  0.  0. ...,  0.  0.  1.]]
+ Target after preprocessing (one-hot): 
+ [[ 0.  0.  1.  0.  0.  0.  0.  0.  0.  0.  0.]
+  [ 0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  1.]
+  [ 0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  1.]
+  [ 0.  0.  0.  0.  0.  0.  0.  0.  0.  1.  0.]
+  [ 1.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.]
+  [ 0.  1.  0.  0.  0.  0.  0.  0.  0.  0.  0.]
+  [ 0.  0.  0.  0.  0.  0.  1.  0.  0.  0.  0.]
+  [ 1.  0.  0.  0.  0.  0.  0.  0.  0.  0.  0.]
+  [ 0.  1.  0.  0.  0.  0.  0.  0.  0.  0.  0.]
+  [ 0.  0.  0.  0.  0.  0.  0.  0.  0.  0.  1.]]
 ```
 - data_size: 1000，数据集大小
 - dataset: (human readable data,machine readable data)，数据集表示为一个元组，(人类可读格式日期，机器可读格式日期)。
@@ -122,3 +122,31 @@ one-hot表示，Xoh.shape = (m,Tx,len(human_vocab))
 即使在翻译过程中，您也会阅读/重读，并专注于与您正在写下的英语部分相对应的法语段落的部分。
 
 Attention机制告诉我们的神经模型，在不同的时间步应该关注哪一个词
+
+<h3> 2.1 Attention mechanism </h3>
+
+在这部分，我们将会实现课程视频中所提出的注意力机制。
+
+下面是你在实现模型的时候应该关注的相关细节：
+
+![attention_model_intuition_03](https://github.com/cxmhfut/DeepLearning.ai/blob/master/images/attention_model_intuition_03.png)
+
+![attention_model_intuition_04](https://github.com/cxmhfut/DeepLearning.ai/blob/master/images/attention_model_intuition_04.png)
+
+- 这个模型中有两个单独的LSTM，在图片底部有一个双向LSTM，我们将其称为pre-attention Bi-LSTM，在顶部的一个LSTM出现在
+Attention机制完成后，我们将其称为post-attention LSTM。pre-attention Bi-LSTM经过Tx个时间步，post-attention LSTM
+经过Ty个时间步。
+- post-attention LSTM 通过输入S<sup>\<t></sup>,C<sup>\<t></sup>一步步向后传播，在视频课程中，sequence模型用的是basic RNN
+输出激活值S<sup>\<t></sup>。在这里我们应用的是LSTM输出激活值S<sup>\<t></sup>和hidden cell state C<sup>\<t></sup>，和序列生成
+任务不同，我们在时间步t计算的时候，y<sup>\<t-1></sup>不会作为LSTM的输入。基于以上这些原因，我们重新设计了我们的模型，因为序列翻译不像
+序列生成任务有着更强的依赖性。
+- 我们用a<sup>\<t></sup> = \[a_pre<sup>\<t></sup>:a_post<sup>\<t></sup>]，将pre-attention Bi-LSTM的前向激活值和逆向激活值进行拼接。
+- 将S<sup>\<t-1></sup>的值用RepeatVector拷贝Tx，将S<sup>\<t-1></sup>和a<sup>\<t></sup>进行拼接计算求出e<sup>\<t,t'></sup>,然后
+e<sup>\<t,t'></sup>通过一个softmax计算出a<sup>\<t,t'></sup>，我们将会说明如何在keras中实现矩阵复制(RepeatVector)和矩阵拼接(Concatenation)
+操作。
+
+让我们来开始实现我们的模型，首先我们来实现两个函数one_step_attention()和model()
+
+- 1)one_step_attention():输入pre-attention Bi-LSTM的所有隐藏层值a=\[a<sup>\<1></sup>,a<sup>\<2></sup>,...,a<sup>\<Tx></sup>]，然后输入
+post-attention LSTM上一个时间步的隐藏层的输出S<sup>\<t-1></sup>，one_step_attention()计算出attention的权重
+(\[α<sup>\<t,1></sup>,α<sup>\<t,2></sup>,...,α<sup>\<t,Tx></sup>])然后输出上下文向量context vector
